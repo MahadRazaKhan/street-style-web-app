@@ -1,20 +1,16 @@
+# 🌆 Street Style & Co
 
-This README includes:
+A sleek, responsive streetwear fashion brand landing page made with pure HTML and CSS.  
+This website captures the bold, urban vibe of **Street Style & Co**, featuring new arrivals, brand story, and contact details — all in one scroll.
 
-1. Project title and preview image
-2. Key features list
-3. Technologies used
-4. Installation instructions
-5. Project structure
-6. Customization guide
-7. Responsive design information
-8. Future enhancement ideas
-9. License information
 
-You can customize it further by:
-- Adding your own screenshot (replace the placeholder URL)
-- Updating the installation instructions with your actual repo URL
-- Adding specific contribution guidelines if needed
-- Including any deployment instructions if you host it somewhere
+## Features
 
-The clean formatting with proper markdown syntax will make it look professional on GitHub.
+-  Bold and minimalistic hero section
+-  About the brand + origin story
+-  New Arrivals section with products
+-  Press shout-outs
+-  Contact section with social links
+-  "Proud of Our Clothes" feature section
+-  Fully responsive for mobile & tablet
+-  Clean and modern UI with Font Awesome icons
