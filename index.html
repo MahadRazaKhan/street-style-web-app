@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Street Style & Co</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo::before {
+      content: "✨";
+      font-size: 1rem;
+    }
+
+    .hero-text {
+      font-size: 7vw;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .line {
+      display: block;
+    }
+
+    .subtext {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      max-width: 500px;
+    }
+
+    .shirt-image {
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      width: 300px;
+      transform: rotate(10deg);
+    }
+
+    .explore-btn {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 130px;
+      height: 130px;
+      border: 1px solid white;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .explore-btn:hover {
+      background-color: white;
+      color: #111;
+    }
+
+    .explore-btn span {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .about-section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: url('https://r1.ilikewallpaper.net/pic/202006/soft-gradient-solid-color-4k-100091-2732x2732_640.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .left-text {
+      flex: 1;
+      font-size: 5vw;
+      font-weight: bold;
+      line-height: 1.1;
+      min-width: 300px;
+    }
+
+    .right-text {
+      flex: 1;
+      font-size: 1.2rem;
+      max-width: 550px;
+      min-width: 300px;
+    }
+
+    .roots-section {
+      position: relative;
+      background: url('https://c4.wallpaperflare.com/wallpaper/292/415/587/soft-gradient-solid-color-gradient-hd-wallpaper-preview.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .roots-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .roots-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+      padding: 40px;
+    }
+
+    .roots-left {
+      font-size: 5vw;
+      font-weight: bold;
+      line-height: 1.1;
+      flex: 1;
+    }
+
+    .roots-right {
+      flex: 1;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      padding-left: 40px;
+      max-width: 550px;
+    }
+
+    .press-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 80px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .press-title {
+      font-size: 5rem;
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .press-content {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .press-quote {
+      border-bottom: 1px solid #555;
+      padding-bottom: 30px;
+    }
+
+    .press-quote:last-child {
+      border-bottom: none;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #eee;
+    }
+
+    .source {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    /* New Arrivals Section */
+    .new-arrivals {
+      padding: 100px 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 5vw;
+      font-weight: bold;
+      margin-bottom: 60px;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      background-color: transparent;
+      border: 1px solid #555;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .product-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      color: #fff;
+    }
+
+    .tip {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    .contact-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-section .heading {
+      font-size: 5vw;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 60px;
+    }
+
+    .contact-section .heading span {
+      display: block;
+      color: #888;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .info-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .info-box h4 {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .info-box p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #888;
+    }
+
+    .partnership {
+      font-size: 5vw;
+      font-weight: bold;
+      line-height: 1;
+      margin-top: 100px;
+      color: #888;
+    }
+
+    /* Proud Section Styles */
+    .proud-section {
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .proud-heading {
+        font-size: 5vw;
+        font-weight: bold;
+        margin-bottom: 60px;
+        line-height: 1.2;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 200px;
+      max-width: 300px;
+      font-size: 1rem;
+    }
+
+    .feature i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .feature p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text {
+        font-size: 15vw;
+      }
+
+      .shirt-image {
+        position: static;
+        width: 80%;
+        margin: 40px auto 0;
+        display: block;
+        transform: rotate(0deg);
+      }
+
+      .explore-btn {
+        position: static;
+        margin: 40px auto 0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .about-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .left-text {
+        font-size: 10vw;
+        margin-bottom: 30px;
+      }
+
+      .right-text {
+        font-size: 1rem;
+      }
+
+      .roots-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .roots-right {
+        padding-left: 0;
+        margin-top: 20px;
+      }
+
+      .roots-left {
+        font-size: 10vw;
+      }
+
+      .press-section {
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+
+      .press-title {
+        font-size: 10vw;
+        margin-bottom: 40px;
+      }
+
+      .section-title,
+      .contact-section .heading,
+      .partnership,
+      .proud-heading {
+        font-size: 10vw;
+      }
+
+      .contact-info {
+        flex-direction: column;
+      }
+
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-card {
+        width: 90%;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature {
+        max-width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">street style & co</div>
+    <div class="hero-text">
+      <span class="line">FIND</span>
+      <span class="line">YOUR</span>
+      <span class="line">VIBE</span>
+    </div>
+    <hr>
+    <p class="subtext">Check out our Captivating Cities shirt collection</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGOsjMmNXV-8d1ew9QUSjyvTqGVijLmElcEA&s" alt="Shirt" class="shirt-image">
+    <div class="explore-btn">
+      <span>EXPLORE<br>HERE</span>
+    </div>
+  </div>
+  <section class="about-section">
+    <div class="about-content">
+      <div class="left-text">
+        ABOUT<br>OUR<br>BRAND
+      </div>
+      <div class="right-text">
+        <p>Street Style & Co is a contemporary fashion brand that celebrates urban culture and individuality. Our designs are inspired by the vibrant energy of city life, blending comfort with cutting-edge style.</p>
+        <p>Founded in 2015, we've grown from a small local boutique to an internationally recognized label, all while staying true to our roots in streetwear culture.</p>
+      </div>
+    </div>
+  </section>
+  <section class="roots-section">
+    <div class="roots-overlay"></div>
+    <div class="roots-content">
+      <div class="roots-left">
+        WE'RE <br> PROUD OF <br> OUR ROOTS
+      </div>
+      <div class="roots-right">
+        Street Style & Co began in a small downtown loft, where our founder hand-printed designs on vintage tees. Today, we maintain that authentic spirit while expanding globally. Our commitment to quality materials and ethical manufacturing honors our humble beginnings and the communities that shaped us.
+      </div>
+    </div>
+  </section>
+  <section class="proud-section">
+    <h2 class="proud-heading">WE'RE<br>PROUD OF<br>OUR CLOTHES</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="fa-solid fa-fan"></i>
+        <p>DESIGNED<br>BY LOCALS</p>
+      </div>
+      <div class="feature">
+        <i class="fa-solid fa-ruler-combined"></i>
+        <p>INCLUSIVE<br>SIZES</p>
+      </div>
+      <div class="feature">
+        <i class="fa-solid fa-globe"></i>
+        <p>ECO-FRIENDLY<br>PACKAGING</p>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="new-arrivals">
+    <h2 class="section-title">NEW ARRIVALS</h2>
+    <div class="products">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://frenchcrown.in/cdn/shop/articles/featured_image_9dc4861b-02c6-4ddf-be9b-f6f2b1994efb.jpg?v=1728458420&width=2048" alt="City of Shirts" />
+        <div class="product-info">
+          <span>City of Shirts</span>
+          <span>$20.00</span>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://aestheticgen.com/cdn/shop/files/pack-of-3-basic-hoodies-aesthetic-gen-1.jpeg?v=1709343409" alt="Street Smart Hoodie" />
+        <div class="product-info">
+          <span>Street Smart Hoodie</span>
+          <span>$25.00</span>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1gJaQczthqep7Y8RIOhpoAw0xdhAV7UlU_w&s" alt="Urban Sweat Shirt" />
+        <div class="product-info">
+          <span>Urban Sweat Shirt</span>
+          <span>$30.00</span>
+        </div>
+      </div>
+    </div>
+    <p class="tip"><strong>Tip:</strong> Drag and drop your image over the mockup.</p>
+  </section>
+  <hr>
+  <section class="press-section">
+    <div class="press-title">PRESS</div>
+    <div class="press-content">
+      <div class="press-quote">
+        <div class="quote">"Street Style & Co redefines urban fashion with their innovative designs and commitment to quality."</div>
+        <div class="source">YOUTH CULTURE MAGAZINE</div>
+      </div>
+      <div class="press-quote">
+        <div class="quote">"The go-to brand for authentic streetwear that doesn't compromise on comfort or style."</div>
+        <div class="source">STREETWEAR DAILY</div>
+      </div>
+      <div class="press-quote">
+        <div class="quote">"A perfect blend of urban edge and wearable fashion that speaks to today's youth."</div>
+        <div class="source">IDEA MEDIA</div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="contact-section">
+    <h1 class="heading">REACH OUT FOR<br><span>INQUIRIES</span></h1>
+    <div class="contact-info">
+      <div class="info-box">
+        <h4>PHONE</h4>
+        <p>(123) 456-7890</p>
+      </div>
+      <div class="info-box">
+        <h4>EMAIL</h4>
+        <p>hello@streetstyleco.com</p>
+      </div>
+      <div class="info-box">
+        <h4>SOCIAL</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
