@@ -1,18 +1,18 @@
-# 🌆 Street Style & Co
+# Street Style & Co
 
 Check out a few visuals from the website:
 
 <table>
   <tr>
-    <td><img src="" alt="Gallery Image 1" width="100%"/></td>
-    <td><img src="" alt="Gallery Image 2" width="100%"/></td>
-    <td><img src="" alt="Gallery Image 3" width="100%"/></td>
-    <td><img src="" alt="Gallery Image 4" width="100%"/></td>
+    <td><img src="ss01.png" alt="Gallery Image 1" width="100%"/></td>
+    <td><img src="ss02.png" alt="Gallery Image 2" width="100%"/></td>
+    <td><img src="ss03.png" alt="Gallery Image 3" width="100%"/></td>
+    <td><img src="ss04.png" alt="Gallery Image 4" width="100%"/></td>
   </tr>
   <tr>
-    <td><img src="assets/gallery5.jpg" alt="Gallery Image 5" width="100%"/></td>
-    <td><img src="assets/gallery6.jpg" alt="Gallery Image 6" width="100%"/></td>
-    <td><img src="assets/gallery7.jpg" alt="Gallery Image 7" width="100%"/></td>
+    <td><img src="ss05.png" alt="Gallery Image 5" width="100%"/></td>
+    <td><img src="ss06.png" alt="Gallery Image 6" width="100%"/></td>
+    <td><img src="ss07.png" alt="Gallery Image 7" width="100%"/></td>
     <td></td> <!-- empty cell to balance the row -->
   </tr>
 </table>
