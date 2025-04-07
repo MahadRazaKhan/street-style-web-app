@@ -13,7 +13,6 @@ Check out a few visuals from the website:
     <td><img src="ss05.png" alt="Gallery Image 5" width="100%"/></td>
     <td><img src="ss06.png" alt="Gallery Image 6" width="100%"/></td>
     <td><img src="ss07.png" alt="Gallery Image 7" width="100%"/></td>
-    <td></td> <!-- empty cell to balance the row -->
   </tr>
 </table>
 
